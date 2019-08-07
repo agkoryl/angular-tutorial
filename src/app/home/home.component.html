@@ -1,3 +1,26 @@
-<h1>Try events</h1>
 
-<button (click)="firstClick()">CLICK event</button>
+
+<div>
+    <h1 [class.blue]="h1styles">Try events</h1>
+    <h2 [ngClass]="{'blue': true}">Class list</h2>
+    <h3 [ngStyle]="{'font-size': '2em'}">INStyles</h3>
+    <p [class.green]="greenStyle" id="green">If I find myself in times of trouble</p>
+</div>
+<div [ngStyle]="{'display': 'grid', 'grid-template-columns': '30% 30% 30%'}">
+    <button [ngClass]="{'button': true}" (click)="firstClick()">CLICK event</button>
+    <button [ngClass]="{'button': true}" (click)="importedClick()">Method import</button>
+    <button [ngClass]="{'button': true}" (click)="styleVariableClick()">Click to change style in variable</button>
+</div>
+
+<p (change)="inputChange()" id="input"></p>
+
+
+<div>
+    <ul *ngIf="users">
+        <li *ngFor="let user of users.data">
+            <img [src]="user.avatar">
+            <p>{{user.first_name}} {{user.last_name}}</p>
+        </li>
+    </ul>
+</div>
+
